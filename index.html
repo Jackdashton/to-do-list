@@ -9,6 +9,7 @@
 
   </head>
   <body>
+
     <header>
       <h1>To do List</h1>
       <form id="new-task-form"></form>
@@ -21,6 +22,32 @@
           id="new-task-submit"
           value="Add task">
     </header>
+
+    <main class="task-list">
+      <h2>Tasks</h2>
+
+              <!-- All tasks go in here, need id to target this in javascript to add the class -->
+      <div id="tasks">
+        <div id="task">
+          <div class="content">
+            <input
+              type="text"
+              class="text"
+              value="My shiny task"
+              readonly>
+              <!-- Readonly means we can't edit this -->
+          </div>
+          <div class="actions">
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <script src="main.js"> </script>
+
   </body>
 
 </html>
