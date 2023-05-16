@@ -1,156 +1,151 @@
 :root {
-	--dark: #191818;
-	--darker: #1F2937;
-	--darkest: #111827;
-	--grey: #6B7280;
-	--pink: #EC4899;
-	--purple: #8B5CF6;
-	--light: #EEE;
-  --blue: #3500D3;
+  --black: #0b0c10;
+  --grey: #1f2833;
+  --light: #ffffff;
+  --blue: #9be5e2;
+  --turq: #45a29e;
 }
 
 * {
-	margin: 0;
-	box-sizing: border-box;
-	font-family: "Fira sans", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	color: #FFF;
-	background-color: var(--dark);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: var(--light);
+  background-color: var(--black);
 }
 
 header {
-	padding: 2rem 1rem;
-	max-width: 800px;
-	width: 100%;
-	margin: 0 auto;
+  padding: 2rem 1rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-header h1{
-	font-size: 2.5rem;
-	font-weight: 300;
-	color: var(--grey);
-	margin-bottom: 1rem;
+header h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--light);
+  margin-bottom: 1rem;
 }
 
 #new-task-form {
-	display: flex;;
+  display: flex;
 }
 
-input, button {
-	appearance: none;
-	border: none;
-	outline: none;
-	background: none;
+input,
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
 }
 
 #new-task-input {
-	flex: 1 1 0%;
-	background-color: var(--darker);
-	padding: 1rem;
-	border-radius: 1rem;
-	margin-right: 1rem;
-	color: var(--light);
-	font-size: 1.25rem;
+  flex: 1 1 0%;
+  background-color: var(--light);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-right: 10px;
+  color: var(--black);
+  font-size: 20px;
 }
 
 #new-task-input::placeholder {
-	color: var(--grey);
+  color: var(--grey);
 }
 
 #new-task-submit {
-	background-color: #3500D3;
-	font-size: 1.25rem;
-	font-weight: 700;
-	cursor: pointer;
-  border: 1px solid white;
+  background-color: var(--turq);
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--light);
   border-radius: 8px;
+  padding: 10px;
+  color: var(--light);
 }
 
 #new-task-submit:hover {
-  background-color: #3500D3
-	opacity: 0.8;
-}
-
-#new-task-submit:active {
-	opacity: 0.6;
+  background-color: var(--turq);
+  opacity: 0.8;
 }
 
 main {
-	flex: 1 1 0%;
-	max-width: 800px;
-	width: 100%;
-	margin: 0 auto;
+  flex: 1 1 0%;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .task-list {
-	padding: 1rem;
+  padding: 1rem;
 }
 
 .task-list h2 {
-	font-size: 1.5rem;
-	font-weight: 300;
-	color: var(--grey);
-	margin-bottom: 1rem;
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--light);
+  margin-bottom: 1rem;
 }
 
 #tasks .task {
-	display: flex;
-	justify-content: space-between;
-	background-color: var(--darkest);
-	padding: 1rem;
-	border-radius: 1rem;
-	margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--light) ;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
 }
 
 .task .content {
-	flex: 1 1 0%;
+  flex: 1 1 0%;
 }
 
 .task .content .text {
-	color: var(--light);
-	font-size: 1.125rem;
-	width: 100%;
-	display: block;
-	transition: 0.4s;
+  color: var(--black);
+  font-size: 20px;
+  width: 100%;
+  display: block;
+  transition: 0.4s;
 }
 
 .task .content .text:not(:read-only) {
-	color: var(--pink);
+  color: var(--black);
 }
 
 .task .actions {
-	display: flex;
-	margin: 0 -0.5rem;
+  display: flex;
+  margin: 0 -0.5rem;
 }
 
 .task .actions button {
-	cursor: pointer;
-	margin: 0 0.5rem;
-	font-size: 1.125rem;
-	font-weight: 700;
-	text-transform: uppercase;
-	transition: 0.4s;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.4s;
 }
 
 .task .actions button:hover {
-	opacity: 0.8;
+  opacity: 0.8;
 }
 
 .task .actions button:active {
-	opacity: 0.6;
+  color: green;
 }
 
 .task .actions .edit {
-	background-image: linear-gradient(to right, var(--pink), var(--purple));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+  color: var(--grey);
 }
 
 .task .actions .delete {
-	color: crimson;
+  color: crimson;
 }
