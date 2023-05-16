@@ -1,11 +1,12 @@
 :root {
-	--dark: #374151;
+	--dark: #191818;
 	--darker: #1F2937;
 	--darkest: #111827;
 	--grey: #6B7280;
 	--pink: #EC4899;
 	--purple: #8B5CF6;
 	--light: #EEE;
+  --blue: #3500D3;
 }
 
 * {
@@ -62,17 +63,16 @@ input, button {
 }
 
 #new-task-submit {
-	color: var(--pink);
+	background-color: #3500D3;
 	font-size: 1.25rem;
 	font-weight: 700;
-	background-image: linear-gradient(to right, var(--pink), var(--purple));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
 	cursor: pointer;
-	transition: 0.4s;
+  border: 1px solid white;
+  border-radius: 8px;
 }
 
 #new-task-submit:hover {
+  background-color: #3500D3
 	opacity: 0.8;
 }
 
