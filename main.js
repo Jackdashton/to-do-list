@@ -37,15 +37,59 @@ window.addEventListener("load", () => {
     // The task_content_el element will be nested inside the task_el element in the DOM hierarchy.
 
     const task_input_el = document.createElement("input");
+    // creates a variable for an input element
     task_input_el.classList.add("text");
+    // adds class so that it can be styled.
     task_input_el.type = "text";
+    // text input field
     task_input_el.value = task;
+    // populates field with value of task variable i.e. what has been typed.
     task_input_el.setAttribute("readonly", "readonly");
 
     task_content_el.appendChild(task_input_el);
 
+    const task_actions_el = document.createElement("div");
+    task_actions_el.classList.add("actions");
+
+    const task_edit_el = document.createElement("button");
+    task_edit_el.classList.add("edit");
+    task_edit_el.innerHTML = "Edit";
+
+    const task_delete_el = document.createElement("button");
+    task_delete_el.classList.add("delete");
+    task_delete_el.innerHTML = "Delete";
+
+    // We want to append the child to the task actons element
+    task_actions_el.appendChild(task_edit_el);
+    task_actions_el.appendChild(task_delete_el);
+
+    // Then we want to append the actions element to the task element.
+
+    task_el.appendChild(task_actions_el);
+
+    // We also then want to append the task element to the list element.
+
     list_el.appendChild(task_el);
     // list_el that represents a container element (such as a <ul> or <div>). This line appends the task_el element as a child of the list_el element.
     // Consequently, the task_el and its nested task_content_el will be added to the container element in the DOM.
+
+    input.value = "";
+
+    // These do the buttons - edit changes to save on click
+    task_edit_el.addEventListener("click", () => {
+      if (task_edit_el.innerText.toLowerCase() == "edit") {
+        task_input_el.removeAttribute("readonly");
+        // put cursor where it needs to be
+        task_input_el.focus();
+        task_edit_el.innerText = "Save";
+      } else {
+        task_input_el.setAttribute("readonly", "readonly");
+        task_edit_el.innerText = "Edit";
+      }
+    });
+
+    task_delete_el.addEventListener("click", () => {
+      list_el.removeChild(task_el);
+    });
   });
 });
