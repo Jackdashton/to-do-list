@@ -75,19 +75,21 @@ window.addEventListener("load", () => {
 
     input.value = "";
 
-    task_edit_el.addEventListener('click', () => {
-      if (task_edit_el.innerText.toLowerCase() ==
-      "edit") {
+    // These do the buttons - edit changes to save on click
+    task_edit_el.addEventListener("click", () => {
+      if (task_edit_el.innerText.toLowerCase() == "edit") {
         task_input_el.removeAttribute("readonly");
         // put cursor where it needs to be
         task_input_el.focus();
         task_edit_el.innerText = "Save";
       } else {
-        console.log("Save");
+        task_input_el.setAttribute("readonly", "readonly");
+        task_edit_el.innerText = "Edit";
       }
+    });
 
-
-    })
-
+    task_delete_el.addEventListener("click", () => {
+      list_el.removeChild(task_el);
+    });
   });
 });
